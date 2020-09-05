@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="myinput" type="text" name="username" value="张三" /><br />
+    <ul>
+        <li id="bj" name="beijing" xx="yy">北京</li>
+        <li 1d="tj" name="tianjin">天津</li>
+    </ul>
+    <input type="checkbox" id="hobby" checked=" checked" />
+</body>
+<script src="D:\javascript 工程\Jq\js\jquery-3.4.1.slim.min.js"> </script>
+
+<script>
+    //获取张三
+    //1.获取到id是myinput的标签对象
+    var $myinput = $("#myinput");
+
+    /*
+    2.jQuery把value属性封装为了函数
+    获取value属性值：jQuery对象.val();
+    设置value属性值：jQuery对象.val(新值);
+
+
+
+    */
+
+    alert($myinput.val());
+
+    //把张三改成李四
+    $myinput.val("李四");
+
+    //获取id为bj的标签对象
+    var $bj = $("#bj");
+
+
+    //获取北京节点的name属性值
+    /*
+        在jQuery中把获取属性值和设置属性值封装为了函数
+        获取属性值：jQuery对象.attr("属性名");
+        设置属性值：jQuery对象.attr("属性名","属性值");
+
+    */
+
+    alert($bj.attr("name"));
+
+    //设置北京节点的name属性值为dabeijng
+    $bj.attr("name","dabeijng");
+    alert($bj.attr("name"));
+
+    //新增北京节点的disscription属性  属性值是didu
+    alert($bj.attr("dissccription"));
+    $bj.attr("dissccription","didu");
+    alert($bj.attr("dissccription"));
+
+    //删除北京节点的name1属性并检验name属性是否存在
+    /*
+    removeAttr(name);//根据属性名，删除属性
+
+    */
+    $bj.removeAttr("name");
+    alert($bj.attr("name"));//undefined
+
+    //获得hobby的选中状态
+    //alert($("#hobby").attr("checked"));//根据属性获取属性名
+
+    /*
+    jquery对象.prop("checked");//获取单选框|复选框框状态：选择true,未选中false
+    jquery.prop（"selected");获取下拉选option选中状态：选择true,未选中false
+    */
+
+    alert($("#hobby").prop("checked"));
+</script>
+</html>

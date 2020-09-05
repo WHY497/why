@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+
+
+
+.div.visible{
+    display:none;
+}
+
+</style>
+<script src="D:\javascript 工程\Jq\js\jquery-3.4.1.slim.min.js"> </script>
+<script>
+    $(function(){
+
+   
+        //将反恐放置city的后面
+        //1.获取id是city的父标签对象
+        var $city= $("#city");
+
+        //2.获取id是fk的子标签的对象
+        var $fk =$("#fk");
+
+
+        //3.使用父标签中的函数append添加子标签对象(添加为最后一个)
+        $city.append($fk);//剪切添加
+
+        $("#city").append($("#fk"));
+
+        //将反恐放置city的最前面
+
+        //$("#city").prepend($("#fk"));
+
+        //创建li标签<li id="ms" name="moshou">魔兽</li>
+        var $ms = $("<li id='ms' name='moshou'>魔兽</li>");
+
+        //把魔兽添加到天津前面
+        //$("#tj").before($ms);//在元素前边添加另外一个元素
+        $ms.insertBefore($("#tj"));//把元素添加到另外一个元素前边
+
+
+        //把魔兽添加到天津后面
+        //$("#tj").after(Sms);//在元素后边添加另外一个元素
+        //$ms.insertAfter($("#tj"));//把元素添加到另外一个元素后边
+     })
+
+
+
+</script>
+
+<body>
+    <ul id = "city">
+        <li id="bj" name="beijing">北京</li>
+        <li id="tj" name="tianjin">天津</li>
+        <li id="cq" name="chongqing">重庆</li>
+
+    </ul>
+
+    <ul id="love">
+        <li id="fk" name="fangkong">反恐</li>
+        <li id="xj" name="xingji">星际</li>
+    </ul>
+
+</body>
+
+</html>

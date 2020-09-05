@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery中页面加载事件和js中加载事件的区别</title>
+</head>
+<script src="D:\javascript 工程\Jq\js\jquery-3.4.1.slim.min.js"> </script>
+<script>
+    /*
+        jQuery中页面加载事件和js中页面加载事件的区别、
+        js中页面加载事件：
+            只能写一个
+            写多个后面会被覆盖前面的。
+
+
+    */
+     window.onload = function(){
+        alert(1);
+    }
+    window.onload = function(){
+        alert(2);
+    }
+
+
+
+
+    /*
+    jQuery中页面加载事件：
+    写多个，都会被执行
+    
+    
+    
+    */
+    $(function(){
+        alert(3);
+    });
+    $(function(){
+        alert(4);
+    });
+</script>
+<body>
+   <div>我是一个div</div> 
+</body>
+</html>

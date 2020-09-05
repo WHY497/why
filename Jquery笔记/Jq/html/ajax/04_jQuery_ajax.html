@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用jQuery框架封装的ajax请求方式</title>
+</head>
+<script src="../../jquery-3.5.1/jquery-3.5.1.min.js"></script>
+
+<script>
+    /*
+    使用jQuery框架封装的ajax请求方式
+    jQuery.ajax(url,[settings])
+    $.ajax({
+        url:请求服务器的地址
+        async:设置异步请求方式，值：true:异步（不写默认），值false：同步
+        data 发送到服务器的数据，可以是键值对形式k=v&k=v
+        type ：设置请求方式，(默认: "GET")请求方式("POST"或"GET"),默认为"GET"
+        dataType: 预期服务 器的返回数据的类型
+        success 请求成功后的回调函数
+        error 请求失败时调用此函数
+    });
+    */
+    $(function(){
+        //获取id是but,给按钮添加一个鼠标点击事件
+      $("but").click(function(){
+        //发送jQuery框架封装
+        $.ajax({
+            url:"/demo01jQuery/jQuery_ajax",
+            async:true,
+            type:"post",
+            dataType:"text",
+            
+            data:"username=jack&password=1234",
+            //success:请求成功后执行的回调函数
+            success:function(data){
+                $("#myDiv").html(data);
+            },
+            //error:请求失败后执行的回调函数
+            error:function(){
+                $("#myDiv").html("请求服务器失败");
+            }
+        });
+      });
+    });
+</script>
+<body>
+    <input id="but" type="button" value="使用jQuery框架封装的ajax请求方式"/>
+    <div id="myDiv"></div>
+</body>
+</html>

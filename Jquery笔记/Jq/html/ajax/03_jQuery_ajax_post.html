@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用jQuery框架封装咋装的ajax的post请求方式</title>
+</head>
+<script src="../../jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script>
+    /*
+    使用jQuery框架封装咋装的ajax的post请求方式
+    jQuery.postlurl, [data], [allback], [type]);
+    参数：
+    url：请求的服务器端url地址
+    data：发送给服务器端的请求参数，格式可以是key=value
+    callback：回调函数，服务器响应成功后AJAX自动调用函数
+    type：预期的返回数据的类型，取值可以是xml, html, script, json, text,. defaul等
+    */
+    $(function(){
+        //获取id时but按钮，给按钮添加一个点击事件
+        $("#but").click(function(){
+            //发送ajax的post请求
+            $.post(
+                //url:请求服务器的路径
+                "/demo01jQuery/jQuery_post",
+                //data:发送到服务器的数据
+                "username=rose&passwd=1234",
+                //callback:回调函数
+                function(data){
+                    $("#myDiv").html(data);
+                },
+                //4.type：预期的返回数据的类型
+                "text"
+            );
+        });
+    });
+</script>
+<body>
+    <input id="but"  type="button" value="ajax异步请求服务器">
+    <div id="myDiv"></div>
+</body>
+</html>

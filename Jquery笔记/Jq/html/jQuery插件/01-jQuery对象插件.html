@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../jquery-3.5.1/jquery-3.5.1.min.js"></script>
+    <script>
+
+        //普通方式--点击选中复选框
+        /*
+        function checkFn(){
+            //选中所有的复选框
+            //$("input[type='checkbox']").prop("checked",true);
+            $(":checkbox").prop("checked",true);
+        }
+
+        //普通方式--点击取消复选框
+        function uncheckFn(){
+            //取消复选框选中
+            //$("input[type='checkbox']").prop("checked",false);
+            $(":checkbox").prop("checked",false);
+
+        }
+        */
+        /*
+        定义jQuery对象插件(函数)
+        jQuery.fn.extend(object) 对jQuery对象中的函数进行扩展
+        格式：
+        $.fn.extend({
+            函数名：function(){
+
+            },
+
+            函数名：function(){
+
+            },.......
+
+        });
+        
+        */
+        $.fn.extend({
+            //定义函数选中所有的复选框
+            check:function(){
+               $(":checkbox").prop("checked",true);
+            },
+           // 定义函数取消所有的复选框
+           uncheck:function(){
+               $(":checkbox").prop("checked",false);
+           }
+
+        });
+
+        //使用定义的插件函数
+        /*
+        格式：
+        任意的jQuery对象.自定义函数(参数);
+        */
+        //插件方式--点击选中复选框
+        function checkFn1(){
+            //$("#btn1-check").check();
+            $("input").check();
+        }
+
+
+        //插件方式--点击取消复选框选中
+        function uncheckFn1(){
+            //$("#btn2-uncheck").uncheck();
+            $(":button") .uncheck();
+        }
+    </script>
+</head>
+<body>
+    
+    <input id="btn-check" type="button" value="普通方式--点击选中复选框" onclick="checkFn()">
+    <input id="btn-uncheck" type="button" value="普通方式--点击取消复选框选中" onclick="uncheckFn()">
+    <input id="btn1-check" type="button" value="插件方式--点击选中复选框" onclick="checkFn1()">
+    <input id="btn2-uncheck" type="button" value="插件方式--点击取消复选框选中" onclick="uncheckFn1()">
+    <br/>
+    <input type="checkbox" value="football">足球
+    <input type="checkbox" value="basketball">篮球
+    <input type="checkbox" value="volleyball">排球
+
+</body>
+</html>

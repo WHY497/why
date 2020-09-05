@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用js实现ajax技术</title>
+</head>
+
+<script>
+    function butOnclick(){
+        /*
+        原生ajax的实现步骤
+        1.创建ajax引擎对象.XMLHttpRequest
+        2.为XMLHttpRequest对象绑定一个监听对象状态变化的事件，并这个是事件设置一个响应函数
+            这个响应函数有一个名字叫回调函数(服务器给客户端响应之后会自动调用这个函数)
+        3.设置ajax发送到服务器的路径
+        4.发送ajax请求
+        5.接受服务器响应的结果
+
+        */
+        //1.创建ajax引擎对象.XMLHttpRequest
+        var xmlhttp = new.XMLHttpRequest();
+
+
+        // 2.为XMLHttpRequest对象绑定一个监听对象状态变化的事件，并这个是事件设置一个响应函数
+        //这个响应函数有一个名字叫回调函数(服务器给客户端响应之后会自动调用这个函数)
+        /*
+        onreadystatechange存函数（或函数名），每当readyState 属性改变时，就会调用该函数。
+        readyState存有XMLHttpRequest的状态，从0到4发生变化
+        0：请求未初始化
+        1：服务器连接已建立
+        2：请求已接受
+        3：请求处理中
+        4：请求已完成，且响应已就绪
+        sattus 200:"OK"
+        404:没找到页面
+
+        
+
+        */
+        xmlhttp.onreadystatechange=function(){
+            if(xmlhttp.readyState==4 && xml.http.status==200){
+                /*
+                5.接收服务器响应的结果
+                responseText获得字符串形式的响应数据。
+                responseXML获得 XML 形式的响应数据
+
+                */
+
+                documnet.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+            }
+        }
+
+        //3.设置ajax发送到服务器的路径
+        /*
+        open(method,url,async)规定请求的类型、URL、以及是否异步处理请求
+        method:请求的类型；GET或POST
+        url:文件在服务器上的位置
+        async:true(异步)或false(同步)
+
+
+        */
+        xmlhttp.open("GET","/demo01jQuery/",true);
+
+
+        //4.发送ajax请求
+
+        xmlhttp.send();
+    }
+</script>
+<body>
+    <input type="button" value="发送ajax异步请求服务器" onclick="butOnclick()"/>
+    <div id ="myDiv">
+
+
+    </div>
+</body>
+
+</html>

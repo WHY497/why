@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="../../jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script>
+    $(function(){
+        //给id是btn的按钮绑定鼠标点击事件
+        $("#btn").click(function(){
+            alert("按钮被点击绑定了");
+        });
+        
+        
+        /*
+        解绑标签上的事件
+        jQuery对象.off("事件名称")：解绑对象上的指定的事件
+        jQuery对象.off()：解绑对象上所有的事件
+        */
+
+        //给id是btn2的按钮绑定鼠标点击事件
+        $("#btn2").click(function(){
+            //解绑btn按钮上的click事件
+            $("#btn").off("click");
+        });
+
+    
+    
+    });
+</script>
+<body>
+    <input id="btn" type="button" value="测试事件的绑定"/>
+    <input id="btn2" type="button" value="测试事件的解绑" />
+</body>
+</html>

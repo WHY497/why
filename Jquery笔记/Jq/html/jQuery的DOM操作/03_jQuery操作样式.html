@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #p1{
+        background-color:red;
+        
+    }
+    .mp{
+        color:green;
+    }
+    .mpp{
+        background-color:lightgray;
+        
+    }
+</style>
+<body>
+    <p id="p1">1.设置一个css样式</p>
+    <p id="p2">2.批量工作</p>
+    <p id="p3" class="mpp">3.通过class设置样式</p>
+    <p id="p4">4.切换class样式</p>
+    <input type="button" value="切换样式" id="but"/>
+</body>
+<script src="D:\javascript 工程\Jq\js\jquery-3.4.1.slim.min.js"> </script>
+<script>
+    //分别获取p1,p2,p3p4对象
+
+    var $p1 = $("#p1");
+    var $p2 = $("#p2");
+    var $p3 = $("#p3");
+    var $p4 = $("#p4");
+
+    //1.css()获取或设置css样式
+    //p1设置一个样式
+    $p1.css("color","white");
+    $p1.css("font-family", "楷体");
+
+    //p2批量设置样式
+    $p2.css({"color":"blue", "font-family":"幼圆"});
+
+    //获取一个样式
+
+    //alert ($p2.css("color"));
+
+    //2.addClass()添加一个现有的class样式
+    $p3.addClass("mp");
+
+    //3.removeClass()移出一个class
+    $p3.removeClass("mpp");
+
+
+    //4.toggleClass()切换一个class(没有添加，有删除)
+    //获取id时but的按钮，给按钮添加一个鼠标点击事件
+    $("#but").click(function(){
+        $p4.toggleClass("mpp");
+    });
+
+
+</script>
+</html>

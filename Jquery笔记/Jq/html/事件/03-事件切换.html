@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<script src="../../jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script>
+    $(function(){
+        /*
+        jQuery事件的切换:给一个元素，执行不同的事件来回切换
+        1.直接给一个元素依次绑定
+
+        */
+        /*第一种方法
+        //获取id是myDiv的标签，绑定鼠标移入事件
+        $("#myDiv").mouseover(function(){
+            //改变div的背景色为绿色
+            $("#myDiv").css("background-color","green");
+            
+        });
+
+
+        //获取id是myDiv的标签，绑定鼠标移出事件
+        $("#myDiv").mouseout(function(){
+            //改变div的背景色为红色
+            $("#myDiv").css("background-color", "red");
+
+
+        });*/
+        /*
+        //第二种方法链式编程
+        格式：
+        jQuery对象.事件函数(function(){}).事件函数(function(){});
+
+        */
+        /*
+        $("#myDiv").mouseover(function(){
+            //改变div的背景色为绿色
+            $("#myDiv").css("background-color", "green");
+        }).mouseout(function(){
+            //改变div的背景色为红色
+            $("#myDiv").css("background-color", "red");
+        });
+        */
+
+        //第三种写法使用切换函数
+        /*
+        hover([over],out);
+        over:代表鼠标移入事件触发的函数
+        out:代表鼠标移出事件触发的函数
+        */
+
+        $("#myDiv").hover(function(){
+            //鼠标移入改变div的背景色为绿色
+            $("#myDiv").css("background-color", "green");
+        },function(){
+            //鼠标移出改变div的背景色为红色
+            $("#myDiv").css("background-color", "red");
+        });
+    });
+</script>
+<body>
+    <div id="myDiv" style="width:300px;height:300px;border:1px solid black" >
+    鼠标移入变成绿色,移出变成红色
+    </div>
+</body>
+</html>

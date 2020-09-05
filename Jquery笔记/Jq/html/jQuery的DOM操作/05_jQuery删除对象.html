@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+ 
+
+</style>
+
+<script src="../../jquery-3.5.1/jquery-3.5.1.min.js"> 
+   
+
+</script>
+
+<script >
+    $(function(){
+
+   
+    //删除<li id="bj" name="beijing">北京</li>
+    
+    $("#bj").remove();
+    
+  
+   
+    //1.获取id为bj的标签对象
+    //var $tj=$("#tj");
+    //var $city=$("#city"); 
+    //2.使用bj标签对象的remove函数删除自己（自杀）
+    //$tj.remove();
+    //$city.empty();
+    
+    //删除所有的子节点，清空元素中的所有后代节点(不包含属性节点)
+    //$("#city").empty();
+
+    //测试(id='city') 并没有被删除
+    //$("#city").remove();
+    //console.log($("city"));
+
+ });
+</script>
+
+<body>
+
+    <ul id ="city">
+        <li id="bj" name="beijing">北京</li>
+        <li id="tj" name="tianjin">天津</li>
+        <li id="cq" name="chongqing">重庆</li>
+    </ul>
+
+    
+</body>
+
+</html>

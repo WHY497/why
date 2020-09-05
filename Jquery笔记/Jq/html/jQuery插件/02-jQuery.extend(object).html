@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="../../jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script>
+
+    /*
+    定义jQuery对象全局函数插件，使用jQuery函数($)可以直接使用的函数
+    jQuery.extend(object)
+    定义格式：
+    $.extend({
+        函数名:function(){};
+        函数名:function(){};
+        .......
+        函数名:function(){};
+
+
+    });
+
+    */
+    $.extend({
+        //定义一个函数获取两个数最大值的函数
+        max:function(a,b){
+            return a>b? a:b;
+        },
+        //定义一个获取两个数最小值的函数
+        min:function(a,b){
+            return a<b?a:b;
+        }
+    });
+
+   /*
+    使用格式：
+    $.全局函数(参数);
+
+   */
+   alert($.max(10,20));//20
+   alert($.min(10,20));//10
+
+</script>
+<body>
+    
+</body>
+</html>

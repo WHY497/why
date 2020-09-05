@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用jQuery框架的ajx的get请求方式</title>
+</head>
+<script src="../../jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script>
+    function butOnclick(){
+        /*
+        使用jQuery框架的ajax的get请求方式
+        jQuery.get(url,[data],[callback],[type])
+        参数：
+            url:请求服务器的路径
+            data:发送到服务的数据，格式使用键值对 key=value&key=value...
+            callback:回调函数，服务器响应成功，ajax会自动执行这个回调函数
+            type:预设服务器返回的数据类型(text,json)
+        */
+        $.get(
+            //url:请求服务器的路径
+            "/demo01jQuery/jQuery_get"
+            //data:发送到服务器的数据,格式使用键对值
+            //"username=jack&passwd=123",
+            //callback:回调函数 data ：接收服务器响应的数据
+            (function(data){
+                //alert(data);
+                $("#myDiv").html(data);
+            }),
+            //type:预设服务器返回的数据类型
+            "text"
+        );
+
+    }
+
+
+
+
+</script>
+<body>
+    <input type="button" value="ajax异步请求服务器" onclick="butOnclick()"/>
+    <div id="myDiv">
+
+    </div>
+</body>
+</html>
