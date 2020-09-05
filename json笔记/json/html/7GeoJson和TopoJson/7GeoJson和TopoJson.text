@@ -1,0 +1,40 @@
+点对象：
+{
+"type":"Point",
+"coordinates":[-105,39]
+}
+
+
+线对象：
+{
+"type":"LineString",
+"coordinates":[[-105,39],[107,38]]
+}
+
+面对象：
+{
+    "type":"Polygon",
+    "coordinates":[[ [30,0],[31,0],[31,5],[30,5],[30,0] ]]
+}
+
+
+由以上格式可以发现，每一个对象都有一个成员变量coordinates。如果type 的值为
+Point、
+Multipoint、LineString、 MultiLinestring、 Polygon、 Multipolygon
+之一，则该对象必须有变量coordinates.
+如果type 的值为GeometryCollection ( 几何体集合)，那么该对象必须有变量
+geometries,其值是一个数组，数组的每一项都是 一个GeoJSON的几何对象。例如:
+
+{
+	type":"GeometryCollection",
+	"geometries": [
+		{
+			"type": "Point"，
+			"coordinates":[ 100，40 ]
+		},
+		{
+			"type": "LineString"，
+			"coordinates": [ [100, 30], [100, 35] ]
+		}
+	]
+}

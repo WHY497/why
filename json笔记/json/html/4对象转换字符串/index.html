@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //JSON . stringify(value[，replacer[, space]])
+    var obj = {
+                name:"Geoff Lui",
+                age:26,
+                a: undefined,
+                // f: function(){
+
+                // },
+                // b: [function(){}]
+                b:3,
+                c:4,
+                d:5,
+    
+    
+    };
+    console.log(obj);
+
+    //var jsonstr = JSON.stringify(obj,fun);
+    
+    var jsonstr = JSON.stringify(obj,["a","b","c","d"],"\t");
+
+    // 2. value 用法
+   function fun(name,value){
+        if(name == "age"){
+            value = 14;
+            return value;
+        }
+    }
+
+    console.log(jsonstr);
+
+    // {
+    //     name:"Geoff",
+    //     age:26
+    // }
+</script>
+<body>
+    
+</body>
+</html>

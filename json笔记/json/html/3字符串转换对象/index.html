@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //第一种解析方式
+    // var str = '{"name":"Geoff Lui","age":26}';
+
+    // var obj = eval("(" + str + ")");
+
+    // console.log(obj);
+
+    //第二种解析方式
+    var str = '{"name":"Geoff Lui","age":26}';
+    var obj = JSON.parse(str,fun);
+
+    // function fun(name,value){
+    //     console.log(name + ":" + value);
+    //     return value;
+    // }
+
+    function fun(name,value){
+        if( name == "age")
+            value =14;
+        return value;
+    }
+    console.log(obj);
+</script>
+<body>
+    
+</body>
+</html>

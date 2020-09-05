@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var xmlhttp;
+    xmlhttp = CreateXHR;
+    //xmlhttp.open("GET","test.json",true);
+    xmlhttp.open("GET","test.xml",true);
+    xmlhttp.send();
+
+
+    xmlhttp.onreadystatechage = function (){
+
+        if(xmlhttp.readyState == 4 && xmlhttp.status ==200){
+            
+            // var jsonstr = xmlhttp. responseText ;
+            // console.log( jsonstr);
+            var xmlroot = xmlhttp. responseText ;
+            console.log(xmlroot);
+
+            var friends = xmlroot.getElementByTagName("friends");
+            console.log(friends);
+            
+            // var obj = JSON.parse(jsonstr);
+            // console.log(obj);
+        }
+
+    }
+
+   
+        function CreateXHR(){
+            if(window.XMLHttpRequest){
+                //IE7++,Chrorem,Firefox,....
+                return new XMLHttpRequest();
+            }else{
+                // IE6,IE5
+                return new ActiveXObject("MSXML");
+            }
+        }
+    
+</script>
+<body>
+    
+</body>
+</html>
