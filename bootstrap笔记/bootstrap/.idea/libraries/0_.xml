@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="0.课件">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bootstrap4/bootstrap4/0.课件/popper.js-1.15.0.zip!/" />
+      <root url="jar://$PROJECT_DIR$/bootstrap4/bootstrap4/0.课件/jquery-3.3.1.zip!/" />
+      <root url="jar://$PROJECT_DIR$/bootstrap4/bootstrap4/0.课件/bootstrap-4.3.1-dist.zip!/" />
+      <root url="jar://$PROJECT_DIR$/bootstrap4/bootstrap4/0.课件/font-awesome-4.7.0.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

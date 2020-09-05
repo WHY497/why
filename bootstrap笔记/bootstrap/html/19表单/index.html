@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+</head>
+<style>
+
+
+</style>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+<body>
+    <div class="container"><br>
+        <!--
+        <form action="">
+
+            
+            <div class="from-group">
+                <label for="">邮箱</label>
+                <input type="email" name="" id="" class="form-control">
+                <small class="form-text text-muted">请输入您的邮箱</small>
+            </div>
+
+            <div class="from-group">
+                <label for="">密码</label>
+                <input type="password" name="" id="" class="form-control">
+            </div>
+
+            <div class="from-group">
+                <label for="">省份</label>
+                <select class="form-control"name="" id="">
+                    <option value="">-请选择-</option>
+                    <option value="">北京</option>
+                    <option value="">上海</option>
+                    <option value="">浙江</option>
+                </select>
+            </div>
+            <div class="from-group">
+                <label for="">其它</label>
+                <textarea  class="form-control"></textarea>
+            </div>
+
+            <div class="from-group">
+                <label for="">Logo</label>
+                <input type="file" name="" id="" class="form-control-file ">
+             </div>
+             <br>
+             <div class="from-group">
+                <label for="">年薪</label>
+                <input type="range" name="" id="" class="form-control-range ">
+            </div>
+
+            <div class="form-group">
+
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="radio" id="" class="form-check-input">
+                    <label for="" class="form-check-label">男</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="radio" id="" class="form-check-input">
+                    <label for="" class="form-check-label">女</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="radio" id="" class="form-check-input">
+                    <label for="" class="form-check-label">保密</label>
+                </div>
+
+            </div>
+            <div class="form-group">
+
+                <div class="form-check ">
+                    <input type="checkbox" name="checkbox" id="" class="form-check-input">
+                    <label for="" class="form-check-label">xxx</label>
+                </div>
+                <div class="form-check ">
+                    <input type="checkbox" name="checkbox" id="" class="form-check-input">
+                    <label for="" class="form-check-label">xxx</label>
+                </div>
+                <div class="form-check ">
+                    <input type="checkbox" name="checkbox" id="" class="form-check-input">
+                    <label for="" class="form-check-label">xxx</label>
+                </div>
+
+            </div>
+
+             <div class="form-check ">
+                 <input type="checkbox" name="checkbox" id="" class="form-check-input position-static">
+             </div>
+
+              <div class="form-check ">
+                  <input type="radio" name="radio" id="" class="form-check-input position-static">
+              </div>
+
+             <br>
+             <div class="form-check">
+                <input type="checkbox" name="" id="" class="form-check-input">
+                <label for="" class="form-check-label">记住我</label>
+            </div>
+
+           
+            <div class="from-group">
+                <button class="btn btn-primary">注册</button>
+            </div>
+            -->
+            <!--
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="">邮箱</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="">密码</label>
+                        <input type="password" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="">地址</label>
+                <input type="text" class="form-control">
+            </div>
+            <button class="btn btn-primary">登录</button>
+            -->
+            <!--
+                <div class="form-group row">
+                    <label for="" class="col-md-1 col-form-label " >
+                        邮箱
+                    </label>
+                    <div class="col-md-11">
+                        <input type="email" class="form-control" placeholder="邮箱" >
+                    </div>
+                    
+                </div>
+
+                <div class="form-group row">
+                        <label for="" class="col-md-1 col-form-label" >
+                            密码
+                        </label>
+                        <div class="col-md-11">
+                            <input type="password" class="form-control" placeholder="密码">
+                        </div>
+                </div>
+                
+            
+
+                <div class="form-group row">
+                    <label for="" class="col-md-1 col-form-label">
+                        地址
+                    </label>
+                    <div class="col-md-11">
+                        <input type="text" class="form-control" placeholder="地址">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <div class="col-md-11 offset-1">
+                        <button class="btn btn-primary">登录</button>
+                    </div>
+                </div>
+                -->
+            <!--
+            <div class="form-row">
+                <div class="col-auto">
+                    <input type="text" class="form-control" placeholder="邮箱">
+                </div>
+                <div class="col-auto">
+                    <input type="password" class="form-control" placeholder="密码">
+                </div>
+                <div class="col-auto">
+                    <input type="text" class="form-control" placeholder="地址">
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-primary">登录</button>
+                </div>
+            </div> 
+            -->
+            <!--
+            <input type="text" class="form-control mb-2 mr-sm-2" placeholder="邮箱">
+            <input type="password" class="form-control mb-2 mr-sm-2" placeholder="密码">
+            <div class="form-check mb-2 mr-sm-2">
+                <input type="checkbox" name="" id="" class="form-check-input">
+                <label for="" classs="form-check-label">记住我</label>  
+            </div>
+            
+            <button class="btn btn-primary">登录</button>
+            -->
+            <!--
+            <fieldset disabled>
+                <div class="form-group row">
+                    <label class="col-sm-1 col-form-label">邮箱</label>
+                    <div class="col-sm-11">
+                        <input type="email" class="form-control" placeholder="邮箱" value="123456@qq.com" readonly>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-1 col-form-label">密码</label>
+                    <div class="col-sm-11">
+                        <input type="password" class="form-control" placeholder="密码">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset-sm-1 col-sm-11">
+                        <button class="btn btn-primary">登录</button>
+                    </div>
+                </div>
+            </fieldset>
+            </form>
+            -->
+
+            <form action="" novalidate class="needs-validation">
+                <div class="form-group">
+                    <label for="">邮箱</label>
+                    <input type="text" class="form-control is-valid" placeholder="邮箱" required>
+                    <div class="invalid-feedback">邮箱格式不正确!</div>
+                    <div class="valid-feedback">邮箱格式正确!</div>
+                </div>
+                <div class="form-group">
+                    <label for="">密码</label> 
+                    <input type="password" class="form-control is-valid" placeholder="密码" required>
+                    <div class="invalid-feedback">密码格式不正确!</div>
+                    <div class="valid-feedback">密码格式正确!</div>
+
+                </div>
+
+                <div class="from-group">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="sex" id="man" class="custom-control-input">
+                        <label class="custom-control-label" for="man">男</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" name="sex" id="woman" class="custom-control-input">
+                        <label class="custom-control-label" for="woman">女</label>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <label for="">身份</label>
+                      <select class="custom-select">
+                          <option>-请选择-</option>
+                          <option>aaa</option>
+                          <option>bbb</option>
+                          <option>ccc</option>
+                      </select>
+                 </div>
+
+                 <div class="from-group">
+                     <input type="range" class="custom-range">
+                 </div>
+
+                 <div class="from-group">
+                        <label for="">Logo</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="avatar">
+                            <label class="custom-file-label" for="avatar">选择文件</label>
+                        </div>
+                 </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="" id="remember" class="custom-control-input">
+                    <label for="remember" class="custom-control-label">记住我</label>
+                </div>
+                <button class="btn btn-primary">登录</button>
+            </form>
+        
+           
+
+    </div>
+
+</body>
+</html>

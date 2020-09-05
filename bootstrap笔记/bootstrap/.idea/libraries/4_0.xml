@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="4.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bootstrap4/bootstrap4/0.课件/bootstrap4中文离线手册/bootstrap4_docs/4.0/bootstrap-4.0.0.zip!/" />
+      <root url="jar://$PROJECT_DIR$/bootstrap4/bootstrap4/0.课件/bootstrap4中文离线手册/bootstrap4_docs/4.0/bootstrap-4.0.0-beta.3-dist.zip!/" />
+      <root url="jar://$PROJECT_DIR$/bootstrap4/bootstrap4/0.课件/bootstrap4中文离线手册/bootstrap4_docs/4.0/bootstrap-4.0.0-beta.3.zip!/" />
+      <root url="jar://$PROJECT_DIR$/bootstrap4/bootstrap4/0.课件/bootstrap4中文离线手册/bootstrap4_docs/4.0/bootstrap-4.0.0-beta.2.zip!/" />
+      <root url="jar://$PROJECT_DIR$/bootstrap4/bootstrap4/0.课件/bootstrap4中文离线手册/bootstrap4_docs/4.0/bootstrap-4.0.0-beta.2-dist.zip!/" />
+      <root url="jar://$PROJECT_DIR$/bootstrap4/bootstrap4/0.课件/bootstrap4中文离线手册/bootstrap4_docs/4.0/bootstrap-4.0.0-dist.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

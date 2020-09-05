@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+</head>
+<style>
+
+
+</style>
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<script>
+    $(function () {
+        var myPopover=$("#myPopover");
+        $('[data-toggle="popover"]').popover()
+
+        
+        $("#btn1").click(function(){
+            myPopover.popover('show');
+        })
+
+         $("#btn2").click(function(){
+            myPopover.popover('hide');
+         })
+
+        $("#btn3").click(function(){
+            myPopover.popover('toggle');
+        })
+
+        myPopover.on("show.bs.popover",function(){
+            alert("show");
+        })
+        myPopover.on("shown.bs.popover",function(){
+            alert("shown");
+         })
+        myPopover.on("hide.bs.popover",function(){
+            alert("hide");
+        })
+        myPopover.on("hidden.bs.popover",function(){
+            alert("hidden");
+        })
+        myPopover.on("inserted.bs.popover ",function(){
+        alert("inserted");
+        })
+
+    })
+</script>
+<body>
+    <div class="container"><br>
+        <button class="btn btn-primary" data-toggle="popover" data-content="内容<b>内容</b>内容." data-trigger="focus"
+        data-placement="bottom" data-animation="false" data-delay='{ "show": 3000, "hide": 1000 }' data-html="true"
+        title="<em>标题</em>内容123!" id="myPopover">button</button>
+        
+        <br >
+        <br >
+        
+        <button id="btn1">show</button>
+        <button id="btn2">hide</button>
+        <button id="btn2">toggle</button>
+    </div> 
+</body>
+</html>

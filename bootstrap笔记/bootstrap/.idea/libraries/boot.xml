@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="boot">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bootstrap4/bootstrap4/0.课件/bootstrap4中文离线手册/bootstrap4_docs/boot/bootstrap-3.3.7-dist.zip!/" />
+      <root url="jar://$PROJECT_DIR$/bootstrap4/bootstrap4/0.课件/bootstrap4中文离线手册/bootstrap4_docs/boot/font-awesome-4.7.0.zip!/" />
+      <root url="jar://$PROJECT_DIR$/bootstrap4/bootstrap4/0.课件/bootstrap4中文离线手册/bootstrap4_docs/boot/font-awesome-4.3.0.zip!/" />
+      <root url="jar://$PROJECT_DIR$/bootstrap4/bootstrap4/0.课件/bootstrap4中文离线手册/bootstrap4_docs/boot/font-awesome-4.6.3.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
