@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<student-list> 
+  <student code="S001"> 
+    <name1>张三</name1>  
+    <age>17</age>  
+    <gender>男</gender>  
+    <email_>zhangsan@qq.com</email_>  
+    <address>四川自贡</address> 
+  </student>  
+  <student id="2" code="S002"> 
+    <name1>李四</name1>  
+    <age>17</age>  
+    <gender>女</gender>  
+    <email_>lisi@qq.com</email_>  
+    <address>四川成都</address> 
+  </student>  
+  <user id="W000">增加一个个user用户 
+    <name>teacher</name>  
+    <email>teacher@qq.com</email> 
+  </user> 
+</student-list>

@@ -1,0 +1,1451 @@
+							                                xml
+	
+
+1 XML简介
+
+1.1 什么是XML
+XML可用于标记电子文件使其具有结构性的标记语言，还可用来标记数据和定义数 据类型，它是一种允许用户对自
+己的标记语言进行定义的源语言。XML提供了统一的方 法来描述和交换独立于应用程序或供应商的结构化数据。
+
+可以说XML是一种与平台无关的表示数据的方法，它和HTML都来自于SGML，而 且它们都包含标记，有着相似的语法。
+但是，XML和HTML的最大区别在于：HTML是 一个定型的标记语言，用固定的标记来描述，显示网页内容。相对地，
+XML则没有固定 的标记，不能描述网页具体的外观、内容，而只是描述内容的数据形式和结构。
+
+XML的出现解决了 HTML难以扩展、交互性差、语义性差以及单向超链接等缺点， 它的技术优势如下。
+
+• 用户可以使用XML自由地制定自己的标记语言。它允许不同的专业人士(例如音 乐家、化学家和数学学者等)开发与
+自己的特定领域有关的标记语言。
+
+• 自描述数据。XML在基本水平上使用的是非常简单的数据格式，可以用100%的 纯ASCII文本来书写，也可以用
+几种其他定义好的格式来书写。
+
+• 存储数据的XML文件可以被程序解析，把里面的数据提取出来加以利用。这些 数据可以在多种场合使用和调用。
+
+• 保持用户界面和结构数据之间的分离。把数据分离出来，能够无缝集成众多来源 的数据。
+
+从本质上来讲，XML也是一个文本文件，可以理解为一个描述数据结构的实现。而 且XML是异构平台之间通信的重要语言，
+是不同系统之间沟通的桥梁。XML用于在一个 文档中存储数据，但是数据存储并不是主要目的，它的主要目的是通过该通用
+格式标准进 行数据交换和传递。
+
+XML支持GB2312格式编码，也支持Unicode格式编码，可以包含世界各地的任何字 符集和二进制数据，并且XML不依赖
+于任何操作系统平台，是真正的跨平台技术。XML 可适用于多个场合，如下所示。
+
+• 结构化数据，例如系统配置文件和邮件地址簿等。
+
+• 标准数据交换，用于多个平台或应用系统之间的数据传递，例如Web Service。
+
+• 应用程序数据的通用，由于XML的出现，越来越多的文字处理程序都开始将原 来保存为二进制的数据转为使用XML保存，
+如微软的Office 2007等。
+
+
+• 创建新的标记语言，用户可以建立新的标记，用以实现更多的功能和操作。例如 现在流行的RSS和Atom,都属于开放的标记语言。
+
+
+
+
+
+
+1.2 XML 树结构
+XML 文档形成了一种树结构，它从“根部”开始，然后扩展到“枝叶”。
+
+一个 XML 文档实例
+XML 使用简单的具有自我描述性的语法：
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<note>
+<to>George</to>
+<from>John</from>
+<heading>Reminder</heading>
+<body>Don't forget the meeting!</body>
+</note>
+
+第一行是 XML 声明。它定义 XML 的版本 (1.0) 和所使用的编码 (ISO-8859-1 = Latin-1/西欧字符集)。
+
+下一行描述文档的根元素（像在说：“本文档是一个便签”）：
+<note>
+
+接下来 4 行描述根的 4 个子元素（to, from, heading 以及 body）：
+<to>George</to>
+<from>John</from>
+<heading>Reminder</heading>
+<body>Don't forget the meeting!</body>
+
+最后一行定义根元素的结尾：
+</note>
+从本例可以设想，该 XML 文档包含了 John 给 George 的一张便签。
+
+
+
+XML 文档形成一种树结构
+XML 文档必须包含根元素。该元素是所有其他元素的父元素。
+XML 文档中的元素形成了一棵文档树。这棵树从根部开始，并扩展到树的最底端。
+
+所有元素均可拥有子元素：
+<root>
+  <child>
+    <subchild>.....</subchild>
+  </child>
+</root>
+父、子以及同胞等术语用于描述元素之间的关系。父元素拥有子元素。相同层级上的子元素成为同胞（兄弟或姐妹）。
+
+
+所有元素均可拥有文本内容和属性（类似 HTML 中）。
+实例
+<bookstore>
+<book category="COOKING">
+  <title lang="en">Everyday Italian</title> 
+  <author>Giada De Laurentiis</author> 
+  <year>2005</year> 
+  <price>30.00</price> 
+</book>
+<book category="CHILDREN">
+  <title lang="en">Harry Potter</title> 
+  <author>J K. Rowling</author> 
+  <year>2005</year> 
+  <price>29.99</price> 
+</book>
+<book category="WEB">
+  <title lang="en">Learning XML</title> 
+  <author>Erik T. Ray</author> 
+  <year>2003</year> 
+  <price>39.95</price> 
+</book>
+</bookstore>
+
+
+
+
+
+例子中的根元素是 <bookstore>。文档中的所有 <book> 元素都被包含在 <bookstore> 中。
+<book> 元素有 4 个子元素：<title>、< author>、<year>、<price>。
+
+
+
+
+1.3 XML 和 HTML 之间的差异
+XML 不是 HTML 的替代。
+
+XML 和 HTML 为不同的目的而设计：
+1.3.1XML 被设计用来传输和存储数据，其焦点是数据的内容。
+1.3.2HTML 被设计用来显示数据，其焦点是数据的外观。
+
+HTML 旨在显示信息，而 XML 旨在传输信息。
+1.3.3.XML 是对 HTML 的补充。
+1.3.4XML 不会替代 HTML，理解这一点很重要。在大多数 Web 应用程序中，XML 用于传输数据，而 HTML 用于格式化并显示数据。
+
+
+对 XML 最好的描述是：
+XML 是独立于软件和硬件的信息传输工具。
+
+
+
+
+
+
+
+
+
+
+
+1.4 XML 用途
+XML 应用于 Web 开发的许多方面，常用于简化数据的存储和共享。
+
+1.4.1.XML 把数据从 HTML 分离
+(1)如果您需要在 HTML 文档中显示动态数据，那么每当数据改变时将花费大量的时间来编辑 HTML。
+(2)通过 XML，数据能够存储在独立的 XML 文件中。这样您就可以专注于使用 HTML/CSS 进行显示和布局，并确保修改底层数据不再需要对 HTML 进行任何的改变。
+(3)通过使用几行 JavaScript 代码，您就可以读取一个外部 XML 文件，并更新您的网页的数据内容。
+
+
+1.4.2XML 简化数据共享
+(1)在真实的世界中，计算机系统和数据使用不兼容的格式来存储数据。
+(2)XML 数据以纯文本格式进行存储，因此提供了一种独立于软件和硬件的数据存储方法。
+(3)这让创建不同应用程序可以共享的数据变得更加容易。
+
+1.4.3XML 简化数据传输
+(1)对开发人员来说，其中一项最费时的挑战一直是在互联网上的不兼容系统之间交换数据。
+(2)由于可以通过各种不兼容的应用程序来读取数据，以 XML 交换数据降低了这种复杂性。
+
+1.4.4XML 简化平台变更
+(1)升级到新的系统（硬件或软件平台），总是非常费时的。必须转换大量的数据，不兼容的数据经常会丢失。
+(2)XML 数据以文本格式存储。这使得 XML 在不损失数据的情况下，更容易扩展或升级到新的操作系统、新的应用程序或新的浏览器。
+
+1.4.5XML 使您的数据更有用
+(1)不同的应用程序都能够访问您的数据，不仅仅在 HTML 页中，也可以从 XML 数据源中进行访问。
+(2)通过 XML，您的数据可供各种阅读设备使用（掌上计算机、语音设备、新闻阅读器等），还可以供盲人或其他残障人士使用。
+
+1.4.6XML 用于创建新的互联网语言
+很多新的互联网语言是通过 XML 创建的。
+这里有一些实例：
+(1)XHTML
+(2)用于描述可用的 Web 服务 的 WSDL
+(3)作为手持设备的标记语言的 WAP 和 WML
+(4)用于新闻 feed 的 RSS 语言
+(5)描述资本和本体的 RDF 和 OWL
+(6)用于描述针针对 Web 的多媒体 的 SMIL
+
+
+
+
+
+
+
+2 XML语法
+2.1 语法规则
+
+所有 XML 元素都须有关闭标签
+在 HTML，经常会看到没有关闭标签的元素：
+<p>This is a paragraph
+<p>This is another paragraph
+
+在 XML 中，省略关闭标签是非法的。所有元素都必须有关闭标签：
+<p>This is a paragraph</p>
+<p>This is another paragraph</p>  
+注释：您也许已经注意到 XML 声明没有关闭标签。这不是错误。声明不属于XML本身的组成部分。
+它不是 XML 元素，也不需要关闭标签。
+
+XML 标签对大小写敏感
+XML 元素使用 XML 标签进行定义。
+
+XML 标签对大小写敏感。在 XML 中，标签 <Letter> 与标签 <letter> 是不同的。
+必须使用相同的大小写来编写打开标签和关闭标签：
+<Message>这是错误的。</message>
+<message>这是正确的。</message> 
+注释：打开标签和关闭标签通常被称为开始标签和结束标签。不论您喜欢哪种术语，它们的概念都是相同的。
+
+
+XML 必须正确地嵌套
+在 HTML 中，常会看到没有正确嵌套的元素：
+<b><i>This text is bold and italic</b></i>
+
+
+在 XML 中，所有元素都必须彼此正确地嵌套：
+<b><i>This text is bold and italic</i></b>
+在上例中，正确嵌套的意思是：由于 <i> 元素是在 <b> 元素内打开的，那么它必须在 <b> 元素内关闭。
+
+
+XML 文档必须有根元素
+XML 文档必须有一个元素是所有其他元素的父元素。该元素称为根元素。
+<root>
+  <child>
+    <subchild>.....</subchild>
+  </child>
+</root>
+
+
+
+
+XML 的属性值须加引号
+与 HTML 类似，XML 也可拥有属性（名称/值的对）。
+在 XML 中，XML 的属性值须加引号。请研究下面的两个 XML 文档。
+
+第一个是错误的，第二个是正确的：
+
+<note date=08/08/2008>
+<to>George</to>
+<from>John</from>
+</note> 
+<note date="08/08/2008">
+<to>George</to>
+<from>John</from>
+</note> 
+在第一个文档中的错误是，note 元素中的 date 属性没有加引号。
+
+
+
+实体引用
+在 XML 中，一些字符拥有特殊的意义。
+如果你把字符 "<" 放在 XML 元素中，会发生错误，这是因为解析器会把它当作新元素的开始。
+
+这样会产生 XML 错误：
+<message>if salary < 1000 then</message>
+
+为了避免这个错误，请用实体引用来代替 "<" 字符：
+<message>if salary&lt;1000 then</message> 
+
+在 XML 中，有 5 个预定义的实体引用：
+&lt;	<	小于
+&gt;	>	大于
+&amp;	&	和号
+&apos;	'	单引号
+&quot;	"	引号
+注释：在 XML 中，只有字符 "<" 和 "&" 确实是非法的。大于号是合法的，但是用实体引用来代替它是一个好习惯。
+
+
+XML 中的注释
+在 XML 中编写注释的语法与 HTML 的语法很相似：
+<!-- This is a comment --> 
+
+在 XML 中，空格会被保留
+HTML 会把多个连续的空格字符裁减（合并）为一个：
+HTML:	Hello           my name is David.
+输出:	Hello my name is David.
+在 XML 中，文档中的空格不会被删节。
+
+
+XML 以 LF 存储换行
+在 Windows 应用程序中，换行通常以一对字符来存储：回车符 (CR) 和换行符 (LF)。这对字符与打字机设置新行的动作有相似之处。
+在 Unix 应用程序中，新行以 LF 字符存储。而 Macintosh 应用程序使用 CR 来存储新行。
+
+2.2 元素
+什么是 XML 元素？
+XML 元素指的是从（且包括）开始标签直到（且包括）结束标签的部分。
+
+元素可包含其他元素、文本或者两者的混合物。元素也可以拥有属性。
+
+<bookstore>
+<book category="CHILDREN">
+  <title>Harry Potter</title> 
+  <author>J K. Rowling</author> 
+  <year>2005</year> 
+  <price>29.99</price> 
+</book>
+<book category="WEB">
+  <title>Learning XML</title> 
+  <author>Erik T. Ray</author> 
+  <year>2003</year> 
+  <price>39.95</price> 
+</book>
+</bookstore> 
+
+在上例中，<bookstore> 和 <book> 都拥有元素内容，因为它们包含了其他元素。<author> 只有文本内容，因为它仅包含文本。
+
+在上例中，只有 <book> 元素拥有属性 (category="CHILDREN")。
+
+XML 命名规则
+XML 元素必须遵循以下命名规则：
+
+名称可以含字母、数字以及其他的字符
+名称不能以数字或者标点符号开始
+名称不能以字符 “xml”（或者 XML、Xml）开始
+名称不能包含空格
+可使用任何名称，没有保留的字词。
+
+最佳命名习惯
+使名称具有描述性。使用下划线的名称也很不错。
+
+名称应当比较简短，比如：<book_title>，而不是：<the_title_of_the_book>。
+
+避免 "-" 字符。如果您按照这样的方式进行命名："first-name"，一些软件会认为你需要提取第一个单词。
+
+避免 "." 字符。如果您按照这样的方式进行命名："first.name"，一些软件会认为 "name" 是对象 "first" 的属性。
+
+避免 ":" 字符。冒号会被转换为命名空间来使用（稍后介绍）。
+
+XML 文档经常有一个对应的数据库，其中的字段会对应 XML 文档中的元素。有一个实用的经验，即使用数据库的名称规则来命名 XML 文档中的元素。
+
+非英语的字母比如 éòá 也是合法的 XML 元素名，不过需要留意当软件开发商不支持这些字符时可能出现的问题。
+
+XML 元素是可扩展的
+XML 元素是可扩展，以携带更多的信息。
+
+请看下面这个 XML 例子：
+
+<note>
+<to>George</to>
+<from>John</from>
+<body>Don't forget the meeting!</body>
+</note> 
+让我们设想一下，我们创建了一个应用程序，可将 <to>、<from> 以及 <body> 元素提取出来，并产生以下的输出：
+
+MESSAGE To: George
+From: John
+
+Don't forget the meeting!
+想象一下，之后这个 XML 文档作者又向这个文档添加了一些额外的信息：
+
+<note>
+<date>2008-08-08</date>
+<to>George</to>
+<from>John</from>
+<heading>Reminder</heading>
+<body>Don't forget the meeting!</body>
+</note>
+
+那么这个应用程序会中断或崩溃吗？
+
+不会。这个应用程序仍然可以找到 XML 文档中的 <to>、<from> 以及 <body> 元素，并产生同样的输出。
+
+XML 的优势之一，就是可以经常在不中断应用程序的情况进行扩展。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.3 属性
+从 HTML，你会回忆起这个：<img src="computer.gif">。"src" 属性提供有关 <img> 元素的额外信息。
+
+在 HTML 中（以及在 XML 中），属性提供有关元素的额外信息：
+
+<img src="computer.gif">
+<a href="demo.asp"> 
+属性通常提供不属于数据组成部分的信息。在下面的例子中，文件类型与数据无关，但是对需要处理这个元素的软件来说却很重要：
+
+<file type="gif">computer.gif</file>
+XML 属性必须加引号
+属性值必须被引号包围，不过单引号和双引号均可使用。比如一个人的性别，person 标签可以这样写：
+
+<person sex="female">
+或者这样也可以：
+
+<person sex='female'>
+注释：如果属性值本身包含双引号，那么有必要使用单引号包围它，就像这个例子：
+
+<gangster name='George "Shotgun" Ziegler'>
+或者可以使用实体引用：
+
+<gangster name="George &quot;Shotgun&quot; Ziegler">
+XML 元素 vs. 属性
+请看这些例子：
+
+<person sex="female">
+  <firstname>Anna</firstname>
+  <lastname>Smith</lastname>
+</person> 
+
+<person>
+  <sex>female</sex>
+  <firstname>Anna</firstname>
+  <lastname>Smith</lastname>
+</person> 
+
+在第一个例子中，sex 是一个属性。在第二个例子中，sex 则是一个子元素。两个例子均可提供相同的信息。
+
+没有什么规矩可以告诉我们什么时候该使用属性，而什么时候该使用子元素。我的经验是在 HTML 中，属性用起来很便利，但是在 XML 中，您应该尽量避免使用属性。如果信息感觉起来很像数据，那么请使用子元素吧。
+
+我最喜欢的方式
+下面的三个 XML 文档包含完全相同的信息：
+
+第一个例子中使用了 date 属性：
+
+<notedate="08/08/2008">
+<to>George</to>
+<from>John</from>
+<heading>Reminder</heading>
+<body>Don't forget the meeting!</body>
+</note> 
+第二个例子中使用了 date 元素：
+
+<note><date>08/08/2008</date><to>George</to>
+<from>John</from>
+<heading>Reminder</heading>
+<body>Don't forget the meeting!</body>
+</note> 
+第三个例子中使用了扩展的 date 元素（这是我的最爱）：
+
+<note><date> <day>08</day> <month>08</month> <year>2008</year> </date><to>George</to>
+<from>John</from>
+<heading>Reminder</heading>
+<body>Don't forget the meeting!</body>
+</note>
+避免 XML 属性？
+因使用属性而引起的一些问题：
+
+属性无法包含多重的值（元素可以）
+属性无法描述树结构（元素可以）
+属性不易扩展（为未来的变化）
+属性难以阅读和维护
+请尽量使用元素来描述数据。而仅仅使用属性来提供与数据无关的信息。
+
+不要做这样的蠢事（这不是 XML 应该被使用的方式）：
+
+<note day="08" month="08" year="2008"
+to="George" from="John" heading="Reminder" 
+body="Don't forget the meeting!">
+</note>
+针对元数据的 XML 属性
+有时候会向元素分配 ID 引用。这些 ID 索引可用于标识 XML 元素，它起作用的方式与 HTML 中 ID 属性是一样的。这个例子向我们演示了这种情况：
+
+<messages>
+  <noteid="501">
+    <to>George</to>
+    <from>John</from>
+    <heading>Reminder</heading>
+    <body>Don't forget the meeting!</body>
+  </note>
+  <noteid="502">
+    <to>John</to>
+    <from>George</from>
+    <heading>Re: Reminder</heading>
+    <body>I will not</body>
+  </note> 
+</messages>
+
+上面的 ID 仅仅是一个标识符，用于标识不同的便签。它并不是便签数据的组成部分。
+
+在此我们极力向您传递的理念是：元数据（有关数据的数据）应当存储为属性，而数据本身应当存储为元素。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.4 验证
+形式良好的 XML 文档
+“形式良好”或“结构良好”的 XML 文档拥有正确的语法。
+
+“形式良好”（Well Formed）的 XML 文档会遵守前几章介绍过的 XML 语法规则：
+
+XML 文档必须有根元素
+XML 文档必须有关闭标签
+XML 标签对大小写敏感
+XML 元素必须被正确的嵌套
+XML 属性必须加引号
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<note>
+<to>George</to>
+<from>John</from>
+<heading>Reminder</heading>
+<body>Don't forget the meeting!</body>
+</note>
+验证 XML 文档
+合法的 XML 文档是“形式良好”的 XML 文档，同样遵守文档类型定义 (DTD) 的语法规则：
+
+<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE note SYSTEM "Note.dtd"><note>
+<to>George</to>
+<from>John</from>
+<heading>Reminder</heading>
+<body>Don't forget the meeting!</body>
+</note>  
+在上例中，DOCTYPE 声明是对外部 DTD 文件的引用。下面的段落展示了这个文件的内容。
+
+XML DTD
+DTD 的作用是定义 XML 文档的结构。它使用一系列合法的元素来定义文档结构：
+
+<!DOCTYPE note [
+  <!ELEMENT note (to,from,heading,body)>
+  <!ELEMENT to      (#PCDATA)>
+  <!ELEMENT from    (#PCDATA)>
+  <!ELEMENT heading (#PCDATA)>
+  <!ELEMENT body    (#PCDATA)>
+]> 
+XML Schema
+
+W3C 支持一种基于 XML 的 DTD 代替者，它名为 XML Schema：
+
+<xs:element name="note">
+
+<xs:complexType>
+  <xs:sequence>
+    <xs:element name="to"      type="xs:string"/>
+    <xs:element name="from"    type="xs:string"/>
+    <xs:element name="heading" type="xs:string"/>
+    <xs:element name="body"    type="xs:string"/>
+  </xs:sequence>
+</xs:complexType>
+
+</xs:element> 
+
+一个通用的验证器
+为了帮助您检查 XML 文件的语法，我们创建了这个工具，以便您对任何 XML 文件进行语法检查。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.5 浏览器支持
+几乎所有的主流浏览器均支持 XML 和 XSLT。
+
+Mozilla Firefox
+从 1.0.2 版本开始，Firefox 就已开始支持 XML 和 XSLT（包括 CSS）。
+
+Mozilla
+Mozilla 含有用于 XML 解析的 Expat，并支持显示 XML + CSS。Mozilla 同时拥有对 Namespaces 的某些支持。
+
+Mozilla 同样可做到对 XSLT 的执行（XSLT implementation）。
+
+Netscape
+自从版本 8 开始，Netscape 开始使用 Mozilla 的引擎，因此它对 XML / XSLT 的支持与 Mozilla 是相同的。
+
+Opera
+自从版本 9 开始，Opera 已经拥有对 XML / XSLT（以及 CSS）的支持。版本 8 仅支持 XML + CSS。
+
+Internet Explorer
+自从版本 6 开始，Internet Explorer 就开始支持 XML、Namespaces、CSS、XSLT 以及 XPath。
+
+注释：Internet Explorer 5 同样拥有对 XML 的支持，但是 XSL 部分与 W3C 的官方标准不兼容！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.6 CSS
+
+使用 CSS 显示您的 XML？
+使用 CSS 来格式化 XML 文档是有可能的。
+
+下面的实例就是关于如何使用 CSS 样式表来格式化 XML 文档：
+
+请看这个 XML 文件：
+
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Edited by XMLSpy® -->
+<CATALOG>
+	<CD>
+		<TITLE>Empire Burlesque</TITLE>
+		<ARTIST>Bob Dylan</ARTIST>
+		<COUNTRY>USA</COUNTRY>
+		<COMPANY>Columbia</COMPANY>
+		<PRICE>10.90</PRICE>
+		<YEAR>1985</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Hide your heart</TITLE>
+		<ARTIST>Bonnie Tyler</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>CBS Records</COMPANY>
+		<PRICE>9.90</PRICE>
+		<YEAR>1988</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Greatest Hits</TITLE>
+		<ARTIST>Dolly Parton</ARTIST>
+		<COUNTRY>USA</COUNTRY>
+		<COMPANY>RCA</COMPANY>
+		<PRICE>9.90</PRICE>
+		<YEAR>1982</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Still got the blues</TITLE>
+		<ARTIST>Gary Moore</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Virgin records</COMPANY>
+		<PRICE>10.20</PRICE>
+		<YEAR>1990</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Eros</TITLE>
+		<ARTIST>Eros Ramazzotti</ARTIST>
+		<COUNTRY>EU</COUNTRY>
+		<COMPANY>BMG</COMPANY>
+		<PRICE>9.90</PRICE>
+		<YEAR>1997</YEAR>
+	</CD>
+	<CD>
+		<TITLE>One night only</TITLE>
+		<ARTIST>Bee Gees</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Polydor</COMPANY>
+		<PRICE>10.90</PRICE>
+		<YEAR>1998</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Sylvias Mother</TITLE>
+		<ARTIST>Dr.Hook</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>CBS</COMPANY>
+		<PRICE>8.10</PRICE>
+		<YEAR>1973</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Maggie May</TITLE>
+		<ARTIST>Rod Stewart</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Pickwick</COMPANY>
+		<PRICE>8.50</PRICE>
+		<YEAR>1990</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Romanza</TITLE>
+		<ARTIST>Andrea Bocelli</ARTIST>
+		<COUNTRY>EU</COUNTRY>
+		<COMPANY>Polydor</COMPANY>
+		<PRICE>10.80</PRICE>
+		<YEAR>1996</YEAR>
+	</CD>
+	<CD>
+		<TITLE>When a man loves a woman</TITLE>
+		<ARTIST>Percy Sledge</ARTIST>
+		<COUNTRY>USA</COUNTRY>
+		<COMPANY>Atlantic</COMPANY>
+		<PRICE>8.70</PRICE>
+		<YEAR>1987</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Black angel</TITLE>
+		<ARTIST>Savage Rose</ARTIST>
+		<COUNTRY>EU</COUNTRY>
+		<COMPANY>Mega</COMPANY>
+		<PRICE>10.90</PRICE>
+		<YEAR>1995</YEAR>
+	</CD>
+	<CD>
+		<TITLE>1999 Grammy Nominees</TITLE>
+		<ARTIST>Many</ARTIST>
+		<COUNTRY>USA</COUNTRY>
+		<COMPANY>Grammy</COMPANY>
+		<PRICE>10.20</PRICE>
+		<YEAR>1999</YEAR>
+	</CD>
+	<CD>
+		<TITLE>For the good times</TITLE>
+		<ARTIST>Kenny Rogers</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Mucik Master</COMPANY>
+		<PRICE>8.70</PRICE>
+		<YEAR>1995</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Big Willie style</TITLE>
+		<ARTIST>Will Smith</ARTIST>
+		<COUNTRY>USA</COUNTRY>
+		<COMPANY>Columbia</COMPANY>
+		<PRICE>9.90</PRICE>
+		<YEAR>1997</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Tupelo Honey</TITLE>
+		<ARTIST>Van Morrison</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Polydor</COMPANY>
+		<PRICE>8.20</PRICE>
+		<YEAR>1971</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Soulsville</TITLE>
+		<ARTIST>Jorn Hoel</ARTIST>
+		<COUNTRY>Norway</COUNTRY>
+		<COMPANY>WEA</COMPANY>
+		<PRICE>7.90</PRICE>
+		<YEAR>1996</YEAR>
+	</CD>
+	<CD>
+		<TITLE>The very best of</TITLE>
+		<ARTIST>Cat Stevens</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Island</COMPANY>
+		<PRICE>8.90</PRICE>
+		<YEAR>1990</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Stop</TITLE>
+		<ARTIST>Sam Brown</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>A and M</COMPANY>
+		<PRICE>8.90</PRICE>
+		<YEAR>1988</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Bridge of Spies</TITLE>
+		<ARTIST>T'Pau</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Siren</COMPANY>
+		<PRICE>7.90</PRICE>
+		<YEAR>1987</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Private Dancer</TITLE>
+		<ARTIST>Tina Turner</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Capitol</COMPANY>
+		<PRICE>8.90</PRICE>
+		<YEAR>1983</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Midt om natten</TITLE>
+		<ARTIST>Kim Larsen</ARTIST>
+		<COUNTRY>EU</COUNTRY>
+		<COMPANY>Medley</COMPANY>
+		<PRICE>7.80</PRICE>
+		<YEAR>1983</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Pavarotti Gala Concert</TITLE>
+		<ARTIST>Luciano Pavarotti</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>DECCA</COMPANY>
+		<PRICE>9.90</PRICE>
+		<YEAR>1991</YEAR>
+	</CD>
+	<CD>
+		<TITLE>The dock of the bay</TITLE>
+		<ARTIST>Otis Redding</ARTIST>
+		<COUNTRY>USA</COUNTRY>
+		<COMPANY>Atlantic</COMPANY>
+		<PRICE>7.90</PRICE>
+		<YEAR>1987</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Picture book</TITLE>
+		<ARTIST>Simply Red</ARTIST>
+		<COUNTRY>EU</COUNTRY>
+		<COMPANY>Elektra</COMPANY>
+		<PRICE>7.20</PRICE>
+		<YEAR>1985</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Red</TITLE>
+		<ARTIST>The Communards</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>London</COMPANY>
+		<PRICE>7.80</PRICE>
+		<YEAR>1987</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Unchain my heart</TITLE>
+		<ARTIST>Joe Cocker</ARTIST>
+		<COUNTRY>USA</COUNTRY>
+		<COMPANY>EMI</COMPANY>
+		<PRICE>8.20</PRICE>
+		<YEAR>1987</YEAR>
+	</CD>
+</CATALOG>
+
+
+然后看这个样式表：
+
+
+CATALOG
+{
+background-color: #ffffff;
+width: 100%;
+}
+CD
+{
+display: block;
+margin-bottom: 30pt;
+margin-left: 0;
+}
+TITLE
+{
+color: #FF0000;
+font-size: 20pt;
+}
+ARTIST
+{
+color: #0000FF;
+font-size: 20pt;
+}
+COUNTRY,PRICE,YEAR,COMPANY
+{
+display: block;
+color: #000000;
+margin-left: 20pt;
+}
+
+
+最后，请查看：
+
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Edited by XMLSpy® -->
+<?xml-stylesheet type="text/css" href="cd_catalog.css"?>
+<CATALOG>
+	<CD>
+		<TITLE>Empire Burlesque</TITLE>
+		<ARTIST>Bob Dylan</ARTIST>
+		<COUNTRY>USA</COUNTRY>
+		<COMPANY>Columbia</COMPANY>
+		<PRICE>10.90</PRICE>
+		<YEAR>1985</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Hide your heart</TITLE>
+		<ARTIST>Bonnie Tyler</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>CBS Records</COMPANY>
+		<PRICE>9.90</PRICE>
+		<YEAR>1988</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Greatest Hits</TITLE>
+		<ARTIST>Dolly Parton</ARTIST>
+		<COUNTRY>USA</COUNTRY>
+		<COMPANY>RCA</COMPANY>
+		<PRICE>9.90</PRICE>
+		<YEAR>1982</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Still got the blues</TITLE>
+		<ARTIST>Gary Moore</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Virgin records</COMPANY>
+		<PRICE>10.20</PRICE>
+		<YEAR>1990</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Eros</TITLE>
+		<ARTIST>Eros Ramazzotti</ARTIST>
+		<COUNTRY>EU</COUNTRY>
+		<COMPANY>BMG</COMPANY>
+		<PRICE>9.90</PRICE>
+		<YEAR>1997</YEAR>
+	</CD>
+	<CD>
+		<TITLE>One night only</TITLE>
+		<ARTIST>Bee Gees</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Polydor</COMPANY>
+		<PRICE>10.90</PRICE>
+		<YEAR>1998</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Sylvias Mother</TITLE>
+		<ARTIST>Dr.Hook</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>CBS</COMPANY>
+		<PRICE>8.10</PRICE>
+		<YEAR>1973</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Maggie May</TITLE>
+		<ARTIST>Rod Stewart</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Pickwick</COMPANY>
+		<PRICE>8.50</PRICE>
+		<YEAR>1990</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Romanza</TITLE>
+		<ARTIST>Andrea Bocelli</ARTIST>
+		<COUNTRY>EU</COUNTRY>
+		<COMPANY>Polydor</COMPANY>
+		<PRICE>10.80</PRICE>
+		<YEAR>1996</YEAR>
+	</CD>
+	<CD>
+		<TITLE>When a man loves a woman</TITLE>
+		<ARTIST>Percy Sledge</ARTIST>
+		<COUNTRY>USA</COUNTRY>
+		<COMPANY>Atlantic</COMPANY>
+		<PRICE>8.70</PRICE>
+		<YEAR>1987</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Black angel</TITLE>
+		<ARTIST>Savage Rose</ARTIST>
+		<COUNTRY>EU</COUNTRY>
+		<COMPANY>Mega</COMPANY>
+		<PRICE>10.90</PRICE>
+		<YEAR>1995</YEAR>
+	</CD>
+	<CD>
+		<TITLE>1999 Grammy Nominees</TITLE>
+		<ARTIST>Many</ARTIST>
+		<COUNTRY>USA</COUNTRY>
+		<COMPANY>Grammy</COMPANY>
+		<PRICE>10.20</PRICE>
+		<YEAR>1999</YEAR>
+	</CD>
+	<CD>
+		<TITLE>For the good times</TITLE>
+		<ARTIST>Kenny Rogers</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Mucik Master</COMPANY>
+		<PRICE>8.70</PRICE>
+		<YEAR>1995</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Big Willie style</TITLE>
+		<ARTIST>Will Smith</ARTIST>
+		<COUNTRY>USA</COUNTRY>
+		<COMPANY>Columbia</COMPANY>
+		<PRICE>9.90</PRICE>
+		<YEAR>1997</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Tupelo Honey</TITLE>
+		<ARTIST>Van Morrison</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Polydor</COMPANY>
+		<PRICE>8.20</PRICE>
+		<YEAR>1971</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Soulsville</TITLE>
+		<ARTIST>Jorn Hoel</ARTIST>
+		<COUNTRY>Norway</COUNTRY>
+		<COMPANY>WEA</COMPANY>
+		<PRICE>7.90</PRICE>
+		<YEAR>1996</YEAR>
+	</CD>
+	<CD>
+		<TITLE>The very best of</TITLE>
+		<ARTIST>Cat Stevens</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Island</COMPANY>
+		<PRICE>8.90</PRICE>
+		<YEAR>1990</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Stop</TITLE>
+		<ARTIST>Sam Brown</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>A and M</COMPANY>
+		<PRICE>8.90</PRICE>
+		<YEAR>1988</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Bridge of Spies</TITLE>
+		<ARTIST>T`Pau</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Siren</COMPANY>
+		<PRICE>7.90</PRICE>
+		<YEAR>1987</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Private Dancer</TITLE>
+		<ARTIST>Tina Turner</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>Capitol</COMPANY>
+		<PRICE>8.90</PRICE>
+		<YEAR>1983</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Midt om natten</TITLE>
+		<ARTIST>Kim Larsen</ARTIST>
+		<COUNTRY>EU</COUNTRY>
+		<COMPANY>Medley</COMPANY>
+		<PRICE>7.80</PRICE>
+		<YEAR>1983</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Pavarotti Gala Concert</TITLE>
+		<ARTIST>Luciano Pavarotti</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>DECCA</COMPANY>
+		<PRICE>9.90</PRICE>
+		<YEAR>1991</YEAR>
+	</CD>
+	<CD>
+		<TITLE>The dock of the bay</TITLE>
+		<ARTIST>Otis Redding</ARTIST>
+		<COUNTRY>USA</COUNTRY>
+		<COMPANY>Atlantic</COMPANY>
+		<PRICE>7.90</PRICE>
+		<YEAR>1987</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Picture book</TITLE>
+		<ARTIST>Simply Red</ARTIST>
+		<COUNTRY>EU</COUNTRY>
+		<COMPANY>Elektra</COMPANY>
+		<PRICE>7.20</PRICE>
+		<YEAR>1985</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Red</TITLE>
+		<ARTIST>The Communards</ARTIST>
+		<COUNTRY>UK</COUNTRY>
+		<COMPANY>London</COMPANY>
+		<PRICE>7.80</PRICE>
+		<YEAR>1987</YEAR>
+	</CD>
+	<CD>
+		<TITLE>Unchain my heart</TITLE>
+		<ARTIST>Joe Cocker</ARTIST>
+		<COUNTRY>USA</COUNTRY>
+		<COMPANY>EMI</COMPANY>
+		<PRICE>8.20</PRICE>
+		<YEAR>1987</YEAR>
+	</CD>
+</CATALOG>
+
+
+尝试一下 »
+
+
+下面是 XML 文件的一小部分。第二行把 XML 文件链接到 CSS 文件：
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/css" href="cd_catalog.css"?>
+<CATALOG>
+<CD>
+<TITLE>Empire Burlesque</TITLE>
+<ARTIST>Bob Dylan</ARTIST>
+<COUNTRY>USA</COUNTRY>
+<COMPANY>Columbia</COMPANY>
+<PRICE>10.90</PRICE>
+<YEAR>1985</YEAR>
+</CD>
+<CD>
+<TITLE>Hide your heart</TITLE>
+<ARTIST>Bonnie Tyler</ARTIST>
+<COUNTRY>UK</COUNTRY>
+<COMPANY>CBS Records</COMPANY>
+<PRICE>9.90</PRICE>
+<YEAR>1988</YEAR>
+</CD>
+.
+.
+.
+</CATALOG>
+使用 CSS 格式化 XML 不是常用的方法。
+
+W3C 推荐使用 XSLT。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.7 XSLT
+通过使用 XSLT，您可以向 XML 文档添加显示信息。
+
+
+使用 XSLT 显示 XML
+XSLT 是首选的 XML 样式表语言。
+
+XSLT (eXtensible Stylesheet Language Transformations) 远比 CSS 更加完善。
+
+使用 XSLT 的方法之一是在浏览器显示 XML 文件之前，先把它转换为 HTML，正如以下的这些例子演示的那样：
+
+查看 XML 文件:
+
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Edited with XML Spy v2007 (http://www.altova.com) -->
+<breakfast_menu>
+	<food>
+		<name>Belgian Waffles</name>
+		<price>$5.95</price>
+		<description>two of our famous Belgian Waffles with plenty of real maple syrup</description>
+		<calories>650</calories>
+	</food>
+	<food>
+		<name>Strawberry Belgian Waffles</name>
+		<price>$7.95</price>
+		<description>light Belgian waffles covered with strawberries and whipped cream</description>
+		<calories>900</calories>
+	</food>
+	<food>
+		<name>Berry-Berry Belgian Waffles</name>
+		<price>$8.95</price>
+		<description>light Belgian waffles covered with an assortment of fresh berries and whipped cream</description>
+		<calories>900</calories>
+	</food>
+	<food>
+		<name>French Toast</name>
+		<price>$4.50</price>
+		<description>thick slices made from our homemade sourdough bread</description>
+		<calories>600</calories>
+	</food>
+	<food>
+		<name>Homestyle Breakfast</name>
+		<price>$6.95</price>
+		<description>two eggs, bacon or sausage, toast, and our ever-popular hash browns</description>
+		<calories>950</calories>
+	</food>
+</breakfast_menu>
+
+XSLT 样式表:
+
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Edited with XML Spy v2007 (http://www.altova.com) -->
+<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.w3.org/1999/xhtml">
+  <body style="font-family:Arial,helvetica,sans-serif;font-size:12pt;
+        background-color:#EEEEEE">
+    <xsl:for-each select="breakfast_menu/food">
+      <div style="background-color:teal;color:white;padding:4px">
+        <span style="font-weight:bold;color:white">
+        <xsl:value-of select="name"/></span>
+        - <xsl:value-of select="price"/>
+      </div>
+      <div style="margin-left:20px;margin-bottom:1em;font-size:10pt">
+        <xsl:value-of select="description"/>
+        <span style="font-style:italic">
+          (<xsl:value-of select="calories"/> calories per serving)
+        </span>
+      </div>
+    </xsl:for-each>
+  </body>
+</html>
+
+查看结果:。
+
+使用XSLT转换XML为HTML显示：
+
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Edited with XML Spy v2007 (http://www.altova.com) -->
+<?xml-stylesheet type="text/xsl" href="simple.xsl" ?>
+<breakfast_menu>
+	<food>
+		<name>Belgian Waffles</name>
+		<price>$5.95</price>
+		<description>two of our famous Belgian Waffles with plenty of real maple syrup</description>
+		<calories>650</calories>
+	</food>
+	<food>
+		<name>Strawberry Belgian Waffles</name>
+		<price>$7.95</price>
+		<description>light Belgian waffles covered with strawberries and whipped cream</description>
+		<calories>900</calories>
+	</food>
+	<food>
+		<name>Berry-Berry Belgian Waffles</name>
+		<price>$8.95</price>
+		<description>light Belgian waffles covered with an assortment of fresh berries and whipped cream</description>
+		<calories>900</calories>
+	</food>
+	<food>
+		<name>French Toast</name>
+		<price>$4.50</price>
+		<description>thick slices made from our homemade sourdough bread</description>
+		<calories>600</calories>
+	</food>
+	<food>
+		<name>Homestyle Breakfast</name>
+		<price>$6.95</price>
+		<description>two eggs, bacon or sausage, toast, and our ever-popular hash browns</description>
+		<calories>950</calories>
+	</food>
+</breakfast_menu>
+
+尝试一下 »
+
+ 第三行，<?xml-stylesheet type="text/xsl" href="simple.xsl"?>，把这个 XML 文件链接到 XSL 文件。
+
+显示结果：
+
+
+
+
+
+在服务器上通过 XSLT 转换 XML
+在上例中，XSLT 转换是由浏览器完成的，浏览器读取的是 XML 文件。
+
+在使用 XSLT 来转换 XML 时，不同的浏览器可能会产生不同结果。为了减少这种问题，可以在服务器上进行 XSLT 转换。
+
+
+请注意，不论转换由服务器还是由浏览器进行，输出结果完成相同。
+
+
+
+
+
+
+
+
+
+  
+3 XML解析
+3.1 xml解析方式
+
+DOM (JAXP Crimson解析器) 			 W3C为HTML和XML分析器制定的标准接口规范,基于树,
+					可随机动态访问和更新文档的内容、结构、样式。
+
+SAX (simple API for XML)                                      不是W3C的标准，而是由XML-DEV邮件列表成员于1998年
+                                                                               为Java语言开发的一种基于事件的简单API。基于事件，逐行
+                                                                              ,解析，顺序访问XML文档，速度快，处理功能简单。
+
+JDOM	                                                              鉴于DOM的低效率,而SAX又不能随机处理XML文档,Jaso
+				              Hunter与Brett Mclaughlin 于2000年春天，开始创建- -种能
+                                                                              充分体现两者优势的API--JDOM (Java-based DOM,基于
+                                                                              Java的DOM)，它是一个基于Java的对象模型，树状结构，
+                                                                              能使读取、操作和写入XML文档，比DOM更高效，比SAX
+                                                                              更强大，但由于使用了大量的类而不使用接口导致灵活性降
+
+                                                                              DOM4J是一个易用的，开源的库，用于XMLXPath,XSLT。它
+	                                                              应用于Java 平台，采用了Java 集合框架并完全支持
+DOM4]                                                                  DOM,SAXJAXP.它提供了大量的接口，因此比JDOM更具有
+                                                                              灵活性。
+
+
+
+
+
+
+
+
+
+
+			             
+3.2 DOM4]解析
+需要使用dom4j-1.6.1.jar核心包来解析XML文件;
+DOM4J解析API:
+
+操作                          类型                          API
+                                                               getRootElement ()
+                                                               element (' 'name" )
+                                标签                        elements(" name" )
+                                                               elements()
+                                                               getName 0
+     
+		                               
+			                atrributeValue(" name' )
+查询	                                                atrribute( name' )
+				atrributes ()
+                                属性		getName ()
+				getValue()
+				getText ()
+
+		文本		elementText ( 'name' )
+
+			            		                             
+		
+		标签		DocumentHelper. createDocument()
+				addElement (' name" )
+				
+增加		属性		AddAttribute(" name”，"value" )
+		文本    		addText()
+
+	
+
+		属性		setValue ()
+修改				addAttribute(“同名”)
+
+		文本		setText()
+		
+
+删除		标签/属性		detach 0
+				getParent(). remove()
+	
+
+4.XPath
+4.1作用
+当xml文件中的标签层次结构很深，那么如何来快速地定位到所需的标签呢?这就用到了xpath技术!!
+作用:快速地查询到xml文件中节点。
+  1)导入jaxen-1.1-beta-6.jar dom4j 的xpath插件包
+  2)在dom4j中Xpath的API
+      List<Node> list = selectNodes("xpath表达式")查询多个节点
+      Node node = selectSingleNode("xpath表达式")查询 一个节点
+
+4.2 xpath表达式(重点)
+表达式                             含义                                   含义
+/                                    绝对路径                             斜杠在最前面，代表xml文件的根。斜杠在中间，表示子元素                         
+//                                   相对路径                            选择后代元素(不分层次结构)
+
+
+*                                    通配                                   选择所有元素
+[ ]                                  条件                                    选择什么条件下的元素
+@                                  属性                                    选择属性
+=                                   内容                                     
+and                               逻辑与      
+text()                                                                         选取文本内容
+                            
+
+
+
+
+
+
+
+
+5.SAX解析
+5.1SAX解析XML的API
+  1)创建SAXparse解析器：SAXparseFactory.newlnstance().newSAXParser();
+  2)自定义DefaultHandler处理器:extends DefaultHandler;
+
+
+
+5.2 SAX与DOM4]解析区别
+
+			                      DOM解析                                                                                                      SAX解析
+原理                                      一次性加载进内存，构造docuemnt数，内存占用比较大			加载一点，读取一点，内存占用相对小
+读取顺序                                  可以读取XML文件任意位置信息，甚至往回读			只能是从 上往下依次读取，不能往回读
+操作方式                                  可以进行查询，也可以进行修改                                                                                         只能查询  
+编码方式                                  面向对象编程方式，更加适合java开发者                                                      基于事件编程方式 ,相对java开发难理解   
+
+
+
+
+
+     

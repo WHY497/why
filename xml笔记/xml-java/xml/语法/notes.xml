@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<a>
+    <!-- 第一个例子中使用了 date 属性： -->
+    <note data="08 08 2008">
+        <to>George</to>
+        <from>John</from>
+        <heading>Reminder</heading>
+        <body>Don't forget the meeting!</body>
+    </note>
+
+  <!-- 第二个例子中使用了 date 元素： -->
+     <note>
+        <date>08/08/2008</date>
+        <to>George</to>
+        <from>John</from>
+        <heading>Reminder</heading>
+        <body>Don't forget the meeting!</body>
+    </note> 
+    <!-- 第三个例子中使用了扩展的 date 元素： -->
+    <note>
+        <date>
+            <day>08</day>
+            <month>08</month>
+            <year>2008</year>
+        </date>
+        <to>George</to>
+        <from>John</from>
+        <heading>Reminder</heading>
+        <body>Don't forget the meeting!</body>
+    </note>
+</a>

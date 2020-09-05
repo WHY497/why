@@ -1,0 +1,5 @@
+<!ELEMENT element (complexType?)>
+<!ATTLIST element name NMTOKEN #REQUIRED>
+<!ATTLIST element type NMTOKEN #IMPLIED>
+<!ELEMENT complexType (sequence)>
+<!ELEMENT sequence (element+)>

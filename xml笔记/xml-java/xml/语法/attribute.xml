@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note date= "08 08 2008">
+    <to>George</to>
+    <from>John</from>
+</note>
+
+<!-- <note data= 08 08 2008>需要加引号
+    <to>George</to>
+    <from>John</from>
+
+</note>  -->

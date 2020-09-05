@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<user-list>
+  <user id="W000">增加一个个user用户
+    <name>teacher</name>
+    <email>teacher@qq.com</email>
+  </user>
+</user-list>
